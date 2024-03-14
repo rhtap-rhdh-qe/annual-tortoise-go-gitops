@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: annual-tortoise-go
+  janus-idp.io/tekton: annual-tortoise-go
+  backstage.io/kubernetes-id: annual-tortoise-go
+  backstage.io/kubernetes-namespace: rhtap-e2e-ci 
+  app.kubernetes.io/part-of: annual-tortoise-go
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
